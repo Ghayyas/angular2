@@ -1,4 +1,4 @@
-System.register(['angular2/core', './image.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './childOne.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,25 +10,43 @@ System.register(['angular2/core', './image.component'], function(exports_1, cont
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, image_component_1;
+    var core_1, childOne_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (image_component_1_1) {
-                image_component_1 = image_component_1_1;
+            function (childOne_component_1_1) {
+                childOne_component_1 = childOne_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    // var num = 1;
+                    // var interval = setInterval(function(){
+                    //     alert('Hello');
+                    //     num++;
+                    //     if(num > 3){
+                    //         clearInterval(interval);
+                    //     }
+                    // },2000)
+                    var _this = this;
+                    this.mydata = 10;
                     this.cites = [1, 2, 3, 4];
-                    //let cd = setInterval(()=>this.mydata++,1000);
-                    //for(var i = 0;i>this.mydata;i++){
-                    //if(this.mydata == 20){
-                    //  clearInterval(cd);
-                    //       }
+                    var cd = setInterval(function () {
+                        //console.log('cd');
+                        _this.mydata++;
+                        if (_this.mydata == 20) {
+                            // alert('bomb');
+                            clearInterval(cd);
+                        }
+                    }, 1000);
+                    //for(var i = 0;i>this.mydata.length;i++){
+                    //    if(this.mydata== 20){
+                    //        clearInterval(cd);
+                    //    }
+                    //}
                 }
                 AppComponent.prototype.pressed = function (event) {
                     alert("image is clicked..");
@@ -36,9 +54,8 @@ System.register(['angular2/core', './image.component'], function(exports_1, cont
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "<div>This is the Root Compoent</div>\n        \n        <div *ngFor=\"#c of cites #i = index\">\n        <span> {{c+i}} </span>\n        <span ngNonBindable> this is form non Bindable. {{c+i}} </span>\n        </div>\n\n\n   <!-- <child-one [data]=\"mydata\"></child-one> -->\n   \n  <!-- <clickable-image (clicked)=\"pressed($event)\"></clickable-image> -->\n    ",
-                        //  directives:[childOneComponent]
-                        directives: [image_component_1.ImageComponent]
+                        template: "<div>This is the Root Compoent</div>\n\n\n        <div *ngFor=\"#c of cites #i = index\">\n        <span> {{c + i+1}} </span>\n        <span ngNonBindable> this is form non Bindable. {{c+i}} </span>\n        </div>\n\n\n    <child-one [data]=\"mydata\"></child-one> \n   \n  <!-- <clickable-image (clicked)=\"pressed($event)\"></clickable-image> -->\n    ",
+                        directives: [childOne_component_1.childOneComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
@@ -48,4 +65,13 @@ System.register(['angular2/core', './image.component'], function(exports_1, cont
         }
     }
 });
+/*
+export class newAppComp{
+    cites: [string]
+    constructor(){
+        this.cites = ['stirng','abc','reb']
+    }
+}
+
+*/ 
 //# sourceMappingURL=app.component.js.map

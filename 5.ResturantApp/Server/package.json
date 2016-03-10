@@ -1,0 +1,23 @@
+{
+  "name": "resturant",
+  "version": "1.0.0",
+  "description": "Preparing Resturant App Using Angular 2",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.6",
+    "mongoose-unique-validator": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "index"
+  },
+  "keywords": [
+    "resturant",
+    "App"
+  ],
+  "author": "Ghayyas Mubashir",
+  "license": "ISC"
+}

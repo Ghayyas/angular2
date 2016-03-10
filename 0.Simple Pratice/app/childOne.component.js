@@ -20,19 +20,20 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             childOneComponent = (function () {
                 function childOneComponent() {
-                    this.data = 10000;
+                    this.Name = "Name";
+                    this.data = 20;
                 }
                 childOneComponent.prototype.backgroundColor = function () {
-                    return 'red';
+                    return 'blue';
                 };
                 childOneComponent = __decorate([
                     core_1.Component({
                         selector: 'child-one',
-                        template: "<div>This is Child with input: {{data}}</div>",
+                        template: "<input [value]=\"'hello'+ Name\"> <div>This is Child with input: {{data}}</div>\n    <span> My name is ALi</span>\n    ",
                         inputs: ['data'],
+                        //styles: ["backgroundColor()"],
                         host: {
-                            // class : 'row',
-                            '[style.color]': "backgroundColor()"
+                            class: 'row',
                         }
                     }), 
                     __metadata('design:paramtypes', [])
